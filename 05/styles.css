@@ -22,8 +22,12 @@ a:hover {
   color: #16D9E3;
 }
 
-.start {
+.start, .new-game {
   font-size: 1.5rem;
+}
+.new-game{
+  width: 100%;
+
 }
 
 h1 {
@@ -83,6 +87,7 @@ h1 {
 
 .board {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   position: relative;
