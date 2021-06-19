@@ -53,18 +53,21 @@ function beginGame() {
     board.innerHTML = '';
     timer.parentElement.classList.remove('hide');
     board.append(circle);
-    let timeLeft = gameConfig.time;
-    timer.innerText = timeLeftToString(timeLeft);
+    updateTimer();
     const interval = setInterval(() => {
-        timeLeft--;
-        if (timeLeft === 0) {
+        gameConfig.time--;
+        if (gameConfig.time === 0) {
             clearInterval(interval);
             endGame();
         }
-        timer.innerText = timeLeftToString(timeLeft);
+        updateTimer();
 
     }, 1000);
     showCircle();
+}
+
+function updateTimer() {
+    timer.innerText = timeLeftToString(gameConfig.time);
 }
 
 function timeLeftToString(timeLeft) {
@@ -87,10 +90,6 @@ function showCircle() {
     circle.classList.remove('hide');
 }
 
-function hideCircle() {
-    circle.classList.add('hide');
-}
-
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -102,5 +101,5 @@ function circleClick() {
 
 function getRandomColor() {
     let color = (new Array(3)).fill(0);
-    return color.map(() => getRandomNumber(0,255)).join(',');
+    return color.map(() => getRandomNumber(0, 255)).join(',');
 }
