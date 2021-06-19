@@ -11,3 +11,27 @@ body {
   overflow: hidden;
   margin: 0;
 }
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 400px;
+
+}
+
+.square {
+  width: 16px;
+  height: 16px;
+  background-color: #1d1d1d;
+  margin: 2px;
+  box-shadow: 0 0 2px black;
+  transition: 3s ease;
+  padding: 2px;
+  font-size: 8px;
+  color: white;
+}
+
+.square:hover {
+  transition-duration: 0s;
+}
